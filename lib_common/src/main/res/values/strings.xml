@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">lib_common</string>
+
+    <string name="error_scan">未解析出二维码</string>
+    <string name="fail_scan">解析二维码失败</string>
+    <string name="exit_app">再按一次退出</string>
+</resources>

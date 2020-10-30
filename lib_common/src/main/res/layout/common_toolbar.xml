@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="title"
+            type="com.zuo.demo.lib_common.base.model.TitleViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/toolbar_root"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@color/white"
+        android:clipToPadding="true"
+        android:fitsSystemWindows="true"
+        android:visibility="@{title.isTitleShow}">
+
+        <RelativeLayout
+            canVisable="@{title.leftVisable}"
+            android:id="@+id/rl_back"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:onClick="@{()->title.onBackPress()}">
+
+
+            <ImageView
+                android:id="@+id/iv_title_back"
+                android:layout_width="24dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="12dp"
+                android:src="@drawable/ic_back_black" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            canVisable="@{title.rightVisable}"
+            android:id="@+id/rl_right"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:onClick="@{() -> title.onRightPressedEvent()}"
+            android:paddingRight="12dp">
+
+            <TextView
+                android:id="@+id/tv_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:ellipsize="middle"
+                android:singleLine="true"
+                android:text="@{title.rightTvDes}"
+                android:textColor="@color/color333333" />
+
+            <ImageView
+                imageRes= "@{title.rightImage}"
+                android:id="@+id/iv_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"
+            android:ellipsize="middle"
+            android:singleLine="true"
+            android:text="@{title.title}"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="14dp" />
+
+    </RelativeLayout>
+
+
+
+</layout>

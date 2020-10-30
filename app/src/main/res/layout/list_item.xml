@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <data>
+        <variable
+            name="itemName"
+            type="String" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_position"
+            android:gravity="center"
+            android:textSize="14dp"
+            android:text="@{itemName}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+           />
+
+    </LinearLayout>
+</layout>

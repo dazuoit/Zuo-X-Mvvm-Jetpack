@@ -1,0 +1,105 @@
+ext {
+    //android开发版本配置
+    android = [
+            compileSdkVersion: 29,
+            buildToolsVersion: "29.0.3",
+            applicationId    : "com.zuo.xmvvm",
+            minSdkVersion    : 19,
+            targetSdkVersion : 29,
+            versionCode      : 1,
+            versionName      : "1.0",
+
+            homeLibId        : "com.zuo.xhome",
+    ]
+    //version配置
+    versions = [
+            "support-version" : "29.0.3",
+            "junit-version"   : "4.12",
+            "androidX-version": "1.1.0",
+    ]
+    //support配置
+    support = [
+            //com.android.support:appcompat-v7:28.0.2
+            'appcompatX'   : "androidx.appcompat:appcompat:${versions["androidX-version"]}",
+            //com.android.support:design:28.0.2
+            'materialX'    : "com.google.android.material:material:${versions["androidX-version"]}",
+            //com.android.support:recyclerview-v7:28.0.2
+            'recyclerviewX': "androidx.recyclerview:recyclerview:${versions["androidX-version"]}",
+
+            'junit'        : "junit:junit:${versions["junit-version"]}",
+
+            //com.android.support:support-v4:28.0.2
+            'legacyX'      : "androidx.legacy:legacy-support-v4:1.0.0",
+    ]
+    //依赖第三方配置
+    dependencies = [
+            //utils
+            "utilcode"              : "com.blankj:utilcodex:1.27.5",
+            //json解析
+            "gson"                  : "com.google.code.gson:gson:2.8.6",
+            //glide图片加载
+            "glide"                 : "com.github.bumptech.glide:glide:4.11.0",
+            "glide-compiler"        : "com.github.bumptech.glide:compiler:4.11.0",
+            "glide-transformations" : "jp.wasabeef:glide-transformations:4.1.0",
+            //glide 加载进度
+            "okhttp3-integration"   : "com.github.bumptech.glide:okhttp3-integration:4.11.0",
+            //rxjava
+            "rxjava"                : "io.reactivex.rxjava3:rxjava:3.0.2",
+            "rxandroid"             : "io.reactivex.rxjava3:rxandroid:3.0.0",
+            "lifecycle-extensions"  : "androidx.lifecycle:lifecycle-extensions:2.2.0",
+            //network
+            "okhttp"                : "com.squareup.okhttp3:okhttp:4.5.0",
+            "logging-interceptor"   : "com.squareup.okhttp3:logging-interceptor:4.5.0",
+            //retrofit
+            "retrofit"              : "com.squareup.retrofit2:retrofit:2.8.1",
+            "converter-gson"        : "com.squareup.retrofit2:converter-gson:2.8.1",
+            "converter-scalars"     : "com.squareup.retrofit2:converter-scalars:2.8.1",
+            "adapter-rxjava"        : "com.squareup.retrofit2:adapter-rxjava2:2.8.1",
+            //rx系列与View生命周期同步
+            "rxlifecycle-runtime"   : "androidx.lifecycle:lifecycle-runtime:2.2.0",
+            "rxlifecycle-common"    : "androidx.lifecycle:lifecycle-common-java8:2.2.0",
+            "rxlifecycle-extensions": "androidx.lifecycle:lifecycle-extensions:2.2.0",
+            "rxlifecycle-viewmodel" : "androidx.lifecycle:lifecycle-viewmodel:2.2.0",
+            "rxlifecycle-livedata"  : "androidx.lifecycle:lifecycle-livedata:2.2.0",
+            //rx 6.0权限请求
+            "rxpermissions"         : "com.github.tbruyelle:rxpermissions:0.10.2",
+            //二维码
+            "zxing-library"         : "cn.yipianfengye.android:zxing-library:2.2",
+            //loading
+            "dialog"                : "com.kongzue.dialog_v3x:dialog:3.1.9",
+            //消息总线
+            "eventbus"              : "org.greenrobot:eventbus:3.2.0",
+            //适配器
+            "Adapter"               : "com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.2",
+            //刷新
+            "SmartRefreshLayout"    : "com.scwang.smartrefresh:SmartRefreshLayout:1.1.2",
+            //图片选择
+            "matisse"               : "com.zhihu.android:matisse:0.5.3-beta3",
+            //日头条屏幕适配方案终极版，一个极低成本的 Android 屏幕适配方案
+            "autosize"              : "me.jessyan:autosize:1.2.1",
+
+            //查看大图
+            "BigImageViewPager"     : "com.github.SherlockGougou:BigImageViewPager:androidx-6.0.1",
+            // "exifinterface"         : "com.android.support:exifinterface:${versions["support-version"]}",
+
+            //仿微信底部tab
+            "alphatabs"             : "com.yinglan.alphatabs:library:1.0.8",
+            //FragmentBackHandler 是一个 Fragment拦截Back键的一个库
+            "FragmentBackHandler"   : "com.github.ikidou:FragmentBackHandler:2.1",
+
+            "arouter-api"           : "com.alibaba:arouter-api:1.5.0",
+            "arouter-compiler"      : "com.alibaba:arouter-compiler:1.2.2",
+
+            "viewpager2"            : "androidx.viewpager2:viewpager2:1.0.0",
+
+            //mvp
+            // "mosby3-mvp"            : "com.hannesdorfmann.mosby3:mvp:3.1.1",
+            //"mosby3-mvp-viewstate"  : "com.hannesdorfmann.mosby3:viewstate:3.1.1",
+            //"zxing-library"         : "cn.yipianfengye.android:zxing-library:2.2",
+            //阿里路由框架
+
+    ]
+
+}
+
+

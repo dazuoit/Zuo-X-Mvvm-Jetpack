@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.zuo.xmvvm.home.HomeViewModel" />
+
+        <variable
+            name="adapter"
+            type="com.zuo.xmvvm.home.HomeActivity.MineViewPagerAdapter" />
+
+        <variable
+            name="viewpagerCallback"
+            type="com.zuo.xmvvm.home.HomeActivity.CallBack" />
+
+        <variable
+            name="pagerChangeCallback"
+            type="com.zuo.xmvvm.home.HomeActivity.MyOnTabChangedListner" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+
+        <com.yinglan.alphatabs.AlphaTabsIndicator
+            bindViewPager="@{viewModel.getPosition()}"
+            tabChangedListner="@{pagerChangeCallback}"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <com.yinglan.alphatabs.AlphaTabView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="5dp"
+                app:tabText="page_1"
+                app:tabTextSize="13dp"
+                app:textColorNormal="@color/color999999"
+                app:textColorSelected="@color/colorAccent" />
+
+
+            <com.yinglan.alphatabs.AlphaTabView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="5dp"
+                app:tabText="page_2"
+                app:tabTextSize="13dp"
+                app:textColorNormal="@color/color999999"
+                app:textColorSelected="@color/colorAccent" />
+
+            <com.yinglan.alphatabs.AlphaTabView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="5dp"
+                app:tabText="list_fragment"
+                app:tabTextSize="13dp"
+                app:textColorNormal="@color/color999999"
+                app:textColorSelected="@color/colorAccent" />
+
+        </com.yinglan.alphatabs.AlphaTabsIndicator>
+
+        <androidx.viewpager2.widget.ViewPager2
+            bindIndicator="@{viewModel.getPosition()}"
+            pagerAdapter="@{adapter}"
+            viewpager2Callback="@{viewpagerCallback}"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+
+</layout>

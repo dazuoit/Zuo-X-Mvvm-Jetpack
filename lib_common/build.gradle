@@ -1,0 +1,84 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath = true
+            }
+        }
+
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+        }
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath = true
+            }
+        }
+
+    }
+    buildTypes {
+        debug {
+            buildConfigField "boolean", 'IS_DEBUG', 'true'
+        }
+        release {
+            buildConfigField "boolean", 'IS_DEBUG', 'false'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    api rootProject.ext.support["appcompatX"]
+    api rootProject.ext.support["materialX"]
+    api rootProject.ext.support["legacyX"]
+    api rootProject.ext.support["recyclerviewX"]
+    api rootProject.ext.support["junit"]
+    api rootProject.ext.dependencies["utilcode"]
+    api rootProject.ext.dependencies["gson"]
+    api(rootProject.ext.dependencies["glide"]) { exclude group: 'com.android.support' }
+    annotationProcessor rootProject.ext.dependencies["glide-compiler"]
+    api(rootProject.ext.dependencies["glide-transformations"]) {
+        exclude group: 'com.android.support'
+    }
+    api rootProject.ext.dependencies["okhttp3-integration"]
+    api(rootProject.ext.dependencies["BigImageViewPager"]) {
+        exclude group: 'com.android.support'
+    }
+    api rootProject.ext.dependencies["rxjava"]
+    api rootProject.ext.dependencies["rxandroid"]
+    api rootProject.ext.dependencies["okhttp"]
+    api rootProject.ext.dependencies["logging-interceptor"]
+    api rootProject.ext.dependencies["converter-gson"]
+    api rootProject.ext.dependencies["converter-scalars"]
+    api rootProject.ext.dependencies["adapter-rxjava"]
+    api rootProject.ext.dependencies["rxlifecycle-runtime"]
+    api rootProject.ext.dependencies["rxlifecycle-common"]
+    api rootProject.ext.dependencies["rxlifecycle-extensions"]
+    api rootProject.ext.dependencies["rxlifecycle-viewmodel"]
+    api rootProject.ext.dependencies["rxlifecycle-livedata"]
+    api(rootProject.ext.dependencies["rxpermissions"]) { exclude group: 'com.android.support' }
+    api rootProject.ext.dependencies["dialog"]
+    api rootProject.ext.dependencies["eventbus"]
+    api rootProject.ext.dependencies["Adapter"]
+    api rootProject.ext.dependencies["SmartRefreshLayout"]
+    api(rootProject.ext.dependencies["matisse"]) { exclude group: 'com.android.support' }
+    api rootProject.ext.dependencies["autosize"]
+    api rootProject.ext.dependencies["alphatabs"]
+    api rootProject.ext.dependencies["FragmentBackHandler"]
+    // viewpager2
+    api rootProject.ext.dependencies["viewpager2"]
+}

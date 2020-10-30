@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.zuo.demo.lib_common.base.model.RootViewModel" />
+
+        <variable
+            name="myOnLoadMore"
+            type="com.scwang.smartrefresh.layout.listener.OnLoadMoreListener" />
+
+        <variable
+            name="myOnRefresh"
+            type="com.scwang.smartrefresh.layout.listener.OnRefreshListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/common_title"
+            layout="@layout/common_toolbar" />
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/srl_layout"
+            isEnableLoadmore="@{vm.enableLoadMore}"
+            isEnableRefresh="@{vm.enableRefresh}"
+            onLoadMoreListener="@{myOnLoadMore}"
+            onRefreshListener="@{myOnRefresh}"
+            noDataMore="@{vm.isNODataMore}"
+            refreshFinish="@{vm.isRefreshFinish}"
+            loadmoreFinish="@{vm.isLoadMoreFinish}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ViewStub
+                    android:id="@+id/view_stub_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </RelativeLayout>
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    </LinearLayout>
+</layout>

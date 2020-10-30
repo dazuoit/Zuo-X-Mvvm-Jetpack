@@ -1,0 +1,59 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    defaultConfig {
+        applicationId rootProject.ext.android.applicationId
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+
+        //高斯模糊
+        renderscriptTargetApi rootProject.ext.android.targetSdkVersion
+        renderscriptSupportModeEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    packagingOptions {
+        //高斯模糊  glide-transfrom  与 dialog 共有 (只能在app gradle 下配置)
+        pickFirst 'lib/arm64-v7a/libRSSupport.so'
+        pickFirst 'lib/arm64-v8a/libRSSupport.so'
+        pickFirst 'lib/armeabi-v7a/libRSSupport.so'
+        pickFirst 'lib/arm64-v8a/librsjni.so'
+        pickFirst 'lib/x86/librsjni.so'
+        pickFirst 'lib/x86/librsjni_androidx.so'
+        pickFirst 'lib/x86_64/librsjni_androidx.so'
+        pickFirst 'lib/x86_64/librsjni.so'
+        pickFirst 'lib/armeabi-v7a/librsjni_androidx.so'
+        pickFirst 'lib/armeabi-v7a/librsjni.so'
+        pickFirst 'lib/x86_64/libRSSupport.so'
+        pickFirst 'lib/x86/libRSSupport.so'
+        pickFirst 'lib/arm64-v8a/librsjni_androidx.so'
+
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':lib_common')
+    //每个使用路由的都需要配置
+   // annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
+
+    if (!isModule.toBoolean()) {
+        //implementation project(':homelib')
+    }
+}
