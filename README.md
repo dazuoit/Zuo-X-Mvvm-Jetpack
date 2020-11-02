@@ -102,7 +102,11 @@
   
 - ## [网络层封装](https://github.com/dazuoit/ZuoXMvvmJetpack/tree/master/lib_common/src/main/java/com/zuo/demo/lib_common/net) 层:
 
-	- ### 参考见 [DataRepository](https://github.com/dazuoit/ZuoXMvvmJetpack/blob/master/app/src/main/java/com/zuo/xmvvm/net/DataRepository.java) 中的请求：
+	- ### 参考见 [DataRepository](https://github.com/dazuoit/ZuoXMvvmJetpack/blob/master/app/src/main/java/com/zuo/xmvvm/net/DataRepository.java) 中的请求
+  	
+# 特别说明 : 
+***
+经过参考众多方案,如[KunMinX/Jetpack-MVVM-Best-Practice](https://github.com/KunMinX/Jetpack-MVVM-Best-Practice) , [goldze/MVVMHabit](https://github.com/goldze/MVVMHabit) 等等的开源项目,试着理解这些开源的大体思想与理念,并尝试在自己的思想中取其精华与自己认为一些更优,更符合实际开发需求的方案,希望能用最简单的 Demo 传达一些思想与框架层面 封装、继承多态、拓展与统一等一些想法,框架经过简单的改写与配置,方便开发者使用,不足与错误之处,欢迎讨论,个人 QQ : 1391084310
 	
 			
 		
