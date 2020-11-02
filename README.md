@@ -1,6 +1,6 @@
 # ZuoXMvvmJetpack (2020-11-02)  
 ***
-本项目为 MVVVM + Jetpack + AndroidX + Fragmnet2 的基类封装与实现 
+本项目为 MVVVM + Jetpack + AndroidX + Fragmnet2 + Glide + rxjava3 + okhttp + retrofit + rxlifecycle + rxpermissions + SmartRefreshLayout +  autosize(头条) + BaseRecyclerViewAdapterHelper 的基类封装与实现 
   
 # 总结: 
 ****
@@ -48,6 +48,41 @@
 		- 8 ,```public class ClickProxy {} //点击事件```
   
 		- 9, ```postEventBus("tag","收到信息"); //发送消息```
+- ## UI 层  BaseRecycleViewActivity BaseRecycleViewFragment	
+	- ### 包含内容：
+ 		- 1 ，集成了BaseRecyclerViewAdapterHelper,子类布局都为**同一种**,只包含一个RecycleView,通过头布局脚布局等可以实现绝大多数复杂布局,如不可以,重写getDataBindingConfig()
+		- 2 , 将SmartRefreshLayout功能默认打开,如不需要,重写关闭
+		- 3 , item的点击事件与item的点击事件抽取出来
+		- 4 , 是否需要检验网络(默认关),没有网络的情况在BaseActivity处理
+		- 5 , 分页情况已page与时间戳2种,自行选择与拓写
+	- ### 设计理念：
+		- 1 , 在通用的处理情况下,完全统一布局,adapter 向子类暴露,通过重写方法来**控制各类开关**,
+		- 2 , 网络处理情况统一,如有个例,子类复写,当观察子类方法时,会发现**代码极少,功能齐全**;
+	- ### 子类用法参考：
+		- 1 ,``public class ListActivity extends BaseRecycleViewActivity<ListDemoViewModel, DemoAdapter> {) //2个泛型必存在```
+		  
+	 	- 2 ,```protected DemoAdapter createAdapter() {
+		return new DemoAdapter();
+	} //当泛型存在时,基类已经获取到,做这一步的目的是方便基类做更多的通用拓展```
+		  
+		- 3 ,``protected void loadData(boolean isLoadMore) {
+		showLoadView(null);
+		DataRepository.getInstance().getNews(mViewModel.getNewsData(), mViewModel.getPage());
+	} //去处理数据的统一入口```
+		  
+		- 4 ,```public void onItemClick(@NonNull BaseQuickAdapter adapter, @NonNull View view, int position) {
+		ToastUtils.showShort(mAdapter.getData().get(position));
+	} //点击事件```
+		  
+		- 5 ,```mViewModel.getNewsData().observe(this, newsDetail -> {
+			hideLoadView();
+			finishLoadData(mViewModel.getIsLoadMore().getValue());
+		}); //拿到数据后处理结果```
+		  
+- ## Adapter 层
+ 
+		
+	
 		  
 		
 		
