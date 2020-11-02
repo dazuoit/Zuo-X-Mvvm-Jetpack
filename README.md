@@ -95,7 +95,15 @@
 		  
 	- ### 子类参考 [DemoAdapter](https://github.com/dazuoit/ZuoXMvvmJetpack/blob/master/app/src/main/java/com/zuo/xmvvm/list/DemoAdapter.java) ：
 - ## VM 层 [BaseViewModel](https://github.com/dazuoit/ZuoXMvvmJetpack/blob/master/lib_common/src/main/java/com/zuo/demo/lib_common/base/model/BaseViewModel.java)   [BaseRecycleViewViewModel](https://github.com/dazuoit/ZuoXMvvmJetpack/blob/master/lib_common/src/main/java/com/zuo/demo/lib_common/base/model/BaseRecycleViewViewModel.java):
-	- ### 对：[goldze/MVVMHabit](https://github.com/goldze/MVVMHabit/blob/master/mvvmhabit/src/main/java/me/goldze/mvvmhabit/base/BaseViewModel.java) 进行边界职能进行重写定义,对其拓展性进行开放,
+	- ### 对：[goldze/MVVMHabit](https://github.com/goldze/MVVMHabit/blob/master/mvvmhabit/src/main/java/me/goldze/mvvmhabit/base/BaseViewModel.java) 进行边界职能进行重写定义,对其拓展性进行开放
+	  
+- ## [DataRepository](https://github.com/dazuoit/ZuoXMvvmJetpack/blob/master/app/src/main/java/com/zuo/xmvvm/net/DataRepository.java) 层:
+	- ### 网络求情数据: 职能边界,仅用于请求指定数据并绑定到VM层,不做任何多余操作
+  
+- ## [网络层封装](https://github.com/dazuoit/ZuoXMvvmJetpack/tree/master/lib_common/src/main/java/com/zuo/demo/lib_common/net) 层:
+
+	- ### 参考见 [DataRepository](https://github.com/dazuoit/ZuoXMvvmJetpack/blob/master/app/src/main/java/com/zuo/xmvvm/net/DataRepository.java) 中的请求：
+	
 			
 		
 		
