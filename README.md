@@ -76,7 +76,7 @@
 		```Java
 		postEventBus("tag","收到信息"); 
 		```
-		  
+	  <br>	  
 - ## UI 层  [BaseRecycleViewActivity](https://github.com/dazuoit/ZuoXMvvmJetpack/blob/master/lib_common/src/main/java/com/zuo/demo/lib_common/base/ui/BaseRecycleViewActivity.java)  [BaseRecycleViewFragment](https://github.com/dazuoit/ZuoXMvvmJetpack/blob/master/lib_common/src/main/java/com/zuo/demo/lib_common/base/ui/BaseRecycleViewFragment.java)	
 	- ### 包含内容：
  		- 1 ，集成了BaseRecyclerViewAdapterHelper,子类布局都为**同一种**,只包含一个RecycleView,通过头布局脚布局等可以实现绝大多数复杂布局,如不可以,重写getDataBindingConfig()
@@ -122,7 +122,7 @@
 			finishLoadData(mViewModel.getIsLoadMore().getValue());
 		}); 
 		```
-		  
+		 <br>  
 - ## Adapter 层:
 	- ### 引用：[CymChad/BaseRecyclerViewAdapterHelper](https://github.com/CymChad/BaseRecyclerViewAdapterHelper)
 	
@@ -145,20 +145,18 @@
 		- 3 , // 对bindingdata 做统一处理
 		```Java
 		protected abstract void bindingData(@NotNull BaseDataBindingHolder<K> holder, T t,K k) {}
-		```
-		  
+		``` 
 	- ### 子类参考 [DemoAdapter](https://github.com/dazuoit/ZuoXMvvmJetpack/blob/master/app/src/main/java/com/zuo/xmvvm/list/DemoAdapter.java) ：
+	<br>  
 - ## VM 层 [BaseViewModel](https://github.com/dazuoit/ZuoXMvvmJetpack/blob/master/lib_common/src/main/java/com/zuo/demo/lib_common/base/model/BaseViewModel.java)   [BaseRecycleViewViewModel](https://github.com/dazuoit/ZuoXMvvmJetpack/blob/master/lib_common/src/main/java/com/zuo/demo/lib_common/base/model/BaseRecycleViewViewModel.java):
 	- ### 对：[goldze/MVVMHabit](https://github.com/goldze/MVVMHabit/blob/master/mvvmhabit/src/main/java/me/goldze/mvvmhabit/base/BaseViewModel.java) 进行边界职能进行重写定义,对其拓展性进行开放
-	  
+	  <br>  
 - ## [DataRepository](https://github.com/dazuoit/ZuoXMvvmJetpack/blob/master/app/src/main/java/com/zuo/xmvvm/net/DataRepository.java) 层:
-	- ### 网络求情数据: 职能边界,仅用于请求指定数据并绑定到VM层,不做任何多余操作
-  
-    
+	- ### 网络求情数据: 职能边界,仅用于请求指定数据并绑定到VM层,不做任何多余操作  
+	  <br>
 - ## [网络层封装](https://github.com/dazuoit/ZuoXMvvmJetpack/tree/master/lib_common/src/main/java/com/zuo/demo/lib_common/net) 层:
-
 	- ### 参考见 [DataRepository](https://github.com/dazuoit/ZuoXMvvmJetpack/blob/master/app/src/main/java/com/zuo/xmvvm/net/DataRepository.java) 中的请求
-  	
+  	  <br>
 # 特别说明 : 
 *** 
 经过参考众多方案,如[KunMinX/Jetpack-MVVM-Best-Practice](https://github.com/KunMinX/Jetpack-MVVM-Best-Practice) , [goldze/MVVMHabit](https://github.com/goldze/MVVMHabit) 等等的开源项目,试着理解这些开源的大体思想与理念,并尝试在自己的思想中取其精华与自己认为一些更优,更符合实际开发需求的方案,希望能用最简单的 Demo 传达一些思想与框架层面 封装、继承多态、拓展与统一等一些想法,框架经过简单的改写与配置,方便开发者使用,不足与错误之处,欢迎讨论,个人 QQ : 1391084310
