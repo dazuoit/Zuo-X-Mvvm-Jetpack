@@ -55,7 +55,7 @@ public abstract class BaseFragment<VM extends BaseViewModel> extends LazyLoadFra
 	private ViewDataBinding binding;
 	protected VM mViewModel;
 	private ViewModelProvider mActivityProvider;
-	private RxPermissions rxPermissions;
+	private RxPermissions mRxPermissions;
 	protected BaseFragment eventTag; // eventbus tag
 	protected BaseActivity mActivity;
 	private RootViewModel rootViewModel;
@@ -325,14 +325,14 @@ public abstract class BaseFragment<VM extends BaseViewModel> extends LazyLoadFra
 	 * @param permissions
 	 */
 	public void rxPermissions(String tip, String... permissions) {
-		if (rxPermissions == null) {
-			rxPermissions = new RxPermissions(this);
+		if (mRxPermissions == null) {
+			mRxPermissions = new RxPermissions(this);
 		}
 		if (EmptyUtils.isEmpty(permissions)) {
 			LogUtils.w("rxPermissions", "Permissions is empty!!");
 			return;
 		}
-		rxPermissions.request(permissions)
+		mRxPermissions.request(permissions)
 				.subscribe(granted -> {
 					if (granted) {
 						rxPermissionsSuccess(tip, permissions);

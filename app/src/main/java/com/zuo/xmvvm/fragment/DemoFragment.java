@@ -16,9 +16,9 @@ import com.zuo.xmvvm.R;
  * @description: 页面
  * @version: v1.0
  */
-public  class DemoFragment  extends BaseFragment<DemoVeiwModel> {
+public class DemoFragment extends BaseFragment<DemoVeiwModel> {
 
-	public static DemoFragment getInstance(String title){
+	public static DemoFragment getInstance(String title) {
 		Bundle bundle = new Bundle();
 		bundle.putString("name", title);
 		DemoFragment fragment = new DemoFragment();
@@ -46,4 +46,6 @@ public  class DemoFragment  extends BaseFragment<DemoVeiwModel> {
 		super.setTitle(titleViewModel);
 		titleViewModel.setTitleShow(View.GONE);
 	}
+
+
 }

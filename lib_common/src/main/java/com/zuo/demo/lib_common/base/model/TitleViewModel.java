@@ -57,40 +57,45 @@ public class TitleViewModel extends BaseViewModel {
 		return leftVisable;
 	}
 
-	public void setLeftVisable(boolean leftBack) {
+	public TitleViewModel setLeftVisable(boolean leftBack) {
 		this.leftVisable = leftBack;
+		return  this;
 	}
 
 	public String getTitle() {
 		return title;
 	}
 
-	public void setTitle(String title) {
+	public TitleViewModel setTitle(String title) {
 		this.title = title;
+		return  this;
 	}
 
 	public int isTitleShow() {
 		return isTitleShow;
 	}
 
-	public void setTitleShow(int titleShow) {
+	public TitleViewModel setTitleShow(int titleShow) {
 		isTitleShow = titleShow;
+		return this;
 	}
 
 	public String getRightTvDes() {
 		return rightTvDes;
 	}
 
-	public void setRightTvDes(String rightTvDes) {
+	public TitleViewModel setRightTvDes(String rightTvDes) {
 		this.rightTvDes = rightTvDes;
+		return this;
 	}
 
 	public int getRightImage() {
 		return rightImage;
 	}
 
-	public void setRightImage(int rightImage) {
+	public TitleViewModel setRightImage(int rightImage) {
 		this.rightImage = rightImage;
+		return this;
 	}
 
 
@@ -98,12 +103,14 @@ public class TitleViewModel extends BaseViewModel {
 		return rightVisable;
 	}
 
-	public void setRightVisable(boolean rightVisable) {
+	public TitleViewModel setRightVisable(boolean rightVisable) {
 		this.rightVisable = rightVisable;
+		return this;
 	}
 
 
-	public void onRightPressedEvent() {
+	public TitleViewModel onRightPressedEvent() {
 		getRightPressedEvent().call();
+		return this;
 	}
 }

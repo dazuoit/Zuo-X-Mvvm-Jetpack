@@ -62,7 +62,7 @@ public abstract class BaseActivity<VM extends BaseViewModel> extends AppCompatAc
 	protected ViewDataBinding binding;
 	protected VM mViewModel;
 	private ViewModelProvider mActivityProvider;
-	private RxPermissions rxPermissions;
+	private RxPermissions mRxPermissions;
 	protected BaseActivity eventTag; // eventbus tag
 	private RootViewModel rootViewModel;
 
@@ -141,8 +141,8 @@ public abstract class BaseActivity<VM extends BaseViewModel> extends AppCompatAc
 	 * @param titleViewModel
 	 */
 	protected void setTitle(TitleViewModel titleViewModel) {
-		titleViewModel.setLeftVisable(true);
-		titleViewModel.setRightVisable(false);
+		titleViewModel.setLeftVisable(true)
+		.setRightVisable(false);
 		titleViewModel.getUC().getOnBackPressedEvent().observe(this, v -> {
 			onLeftPressEvent(titleViewModel);
 		});
@@ -349,14 +349,14 @@ public abstract class BaseActivity<VM extends BaseViewModel> extends AppCompatAc
 	 */
 	@SuppressLint("CheckResult")
 	public void rxPermissions(String tip, String... permissions) {
-		if (rxPermissions == null) {
-			rxPermissions = new RxPermissions(this);
+		if (mRxPermissions == null) {
+			mRxPermissions = new RxPermissions(this);
 		}
 		if (EmptyUtils.isEmpty(permissions)) {
 			LogUtils.w("rxPermissions", "Permissions is empty!!");
 			return;
 		}
-		rxPermissions.request(permissions)
+		mRxPermissions.request(permissions)
 				.subscribe(granted -> {
 					if (granted) {
 						rxPermissionsSuccess(tip, permissions);

@@ -43,10 +43,10 @@ public class MainActivity extends BaseActivity<MainActivityViewModel> {
 	@Override
 	protected void setTitle(TitleViewModel titleViewModel) {
 		super.setTitle(titleViewModel);
-		titleViewModel.setLeftVisable(false);
-		titleViewModel.setTitle("Main");
-		titleViewModel.setRightVisable(true);
-		titleViewModel.setRightTvDes("列表");
+		titleViewModel.setLeftVisable(false)
+				.setTitle("Main")
+				.setRightVisable(true)
+				.setRightTvDes("列表");
 	}
 
 
@@ -63,7 +63,7 @@ public class MainActivity extends BaseActivity<MainActivityViewModel> {
 
 	@Subscribe(threadMode = ThreadMode.MAIN)
 	public void onEvent(EventMsg eventMsg) {
-		if (EmptyUtils.isNotEmpty(eventMsg ) &&  "tag".equals(eventMsg.getTag()) ){
+		if (EmptyUtils.isNotEmpty(eventMsg) && "tag".equals(eventMsg.getTag())) {
 			ToastUtils.showShort((String) eventMsg.getData());
 		}
 	}
@@ -78,7 +78,7 @@ public class MainActivity extends BaseActivity<MainActivityViewModel> {
 		}
 
 		public void sentMsg() {
-			postEventBus("tag","收到信息");
+			postEventBus("tag", "收到信息");
 		}
 	}
 }
