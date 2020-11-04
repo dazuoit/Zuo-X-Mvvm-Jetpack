@@ -29,10 +29,10 @@
 		  
 		- 4 , ```protected void setTitle(TitleViewModel titleViewModel) {
 		super.setTitle(titleViewModel);
-		titleViewModel.setLeftVisable(false);
-		titleViewModel.setTitle("Main");
-		titleViewModel.setRightVisable(true);
-		titleViewModel.setRightTvDes("列表");
+		titleViewModel.setLeftVisable(false)
+				.setTitle("Main")
+				.setRightVisable(true)
+				.setRightTvDes("列表");
 	} //设置标题```
 		  
 		- 5 , ```protected void onRightPressEvent(TitleViewModel titleViewModel) {
