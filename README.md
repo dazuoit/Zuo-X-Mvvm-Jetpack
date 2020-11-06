@@ -1,4 +1,4 @@
-# ZuoXMvvmJetpack (2020-11-02)  
+# Zuo-X-MvvmJetpack (2020-11-02)  
 ***
 本项目为 MVVM + Jetpack + AndroidX + Fragmnet2 + Glide + rxjava3 + okhttp + retrofit + rxlifecycle + rxpermissions + SmartRefreshLayout +  autosize(头条) + BaseRecyclerViewAdapterHelper 的基类封装与实现 
   
